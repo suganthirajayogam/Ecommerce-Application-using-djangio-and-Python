@@ -31,7 +31,7 @@ IDE: Visual Studio Code
 
 ## 1️⃣ Clone the Repository
 
-git clone https://github.com/yourusername/ecommerce-django.git
+git clone https://github.com/suganthirajayogam/ecommerce-django.git
 cd ecommerce-django
 
 ## 2️⃣ Create and Activate a Virtual Environment
