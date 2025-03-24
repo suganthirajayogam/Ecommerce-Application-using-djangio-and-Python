@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class='container-fluid mt-3'>
+  <div class="row">
+  <!--Fetching all categories start-->
+  <div class="col-lg-3 mx-auto">
+  <div class="list-group">
+    {% for category in categories %}
+  
+    <a href="/?category={{ category.id }}" class="list-group-item list-group-item-action">{{ category.name }}</a>
+
+    {% endfor %}
+  </div>
+  </div>
+   <!--Fetching all categories end-->
+
+<!-- tehing productproduct images codes-->
+  <div id="products" class="col-lg-9">
+<div class='row mx-auto'>   <!--to show in row vice-->
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price }}.</p>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+   <!--Fetching the product end-->
+
+  </div>
+</div>
+
+{% endblock %}

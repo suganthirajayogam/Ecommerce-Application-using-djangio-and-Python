@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}  
+<center><h1> Welcome to SignUp Page!!!!!</h1></center>
+<div class='container'>
+  <div class='p-4 m-4'>
+    <div class= 'col-lg-5 mx-auto pt-4 border rounded '>
+      <h3 class='alert alert-light border rounded'> Create an Account</h3>
+      <form action="/signup/" method="POST">
+      {% csrf_token %}
+      {% if error_msg %}
+      <div  class='alert alert-danger'>
+           {{error_msg}}
+      </div>
+      {% endif %}
+        <div class="mb-3">
+          <label for="Username" class="form-label">FirstName</label>
+          <input type="username" class="form-control" id="username" name='firstname' placeholder='Firstname' value="{{values.FirstName}}"> 
+        </div>
+        <div class="mb-3">
+          <label for="lastnum" class="form-label">LastName</label>
+          <input type="lastname" class="form-control" id="lastname" name="lastname" placeholder='LastName' value="{{values.LastName}}"> 
+        </div>
+        <div class="mb-3">
+          <label for="phonenum" class="form-label">Phone no:</label>
+          <input type="phonenumber" class="form-control" id="mobno"  name="phonenumber" placeholder='1234463543' value="{{values.Mobno}}"> 
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder='abc@gmail.com' value="{{values.Emailid}}"> 
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder='********' value="{{values.Password}}">
+        </div>
+        <div class='small'>
+        <button type="submit" class="btn btn-primary">Signup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
